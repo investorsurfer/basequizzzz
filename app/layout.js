@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Base Airdrop Checker',
   description: 'Verify your eligibility for the Base ecosystem',
+  other: {
+    'base:app_id': 'basequizzzz', 
+  },
 }
 
 export default function RootLayout({ children }) {
