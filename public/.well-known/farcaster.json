@@ -1,7 +1,7 @@
 {
   "accountAssociation": {
     "header": "eyJhbGciOiJFUzI1NksifQ",
-    "payload": "eydomain": "basequizzzz.vercel.app"}",
+    "payload": "eyJkb21haW4iOiJiYXNlcXVpenp6ei52ZXJjZWwuYXBwIn0",
     "signature": "PLACEHOLDER_SIGNATURE"
   },
   "frame": {
