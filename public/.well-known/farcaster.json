@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": "eyJhbGciOiJFUzI1NksifQ",
+    "payload": "eydomain": "basequizzzz.vercel.app"}",
+    "signature": "PLACEHOLDER_SIGNATURE"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Base Eligibility Quiz",
+    "iconUrl": "https://basequizzzz.vercel.app/icon.png",
+    "homeUrl": "https://basequizzzz.vercel.app",
+    "imageUrl": "https://basequizzzz.vercel.app/og-image.png",
+    "buttonTitle": "Check Eligibility",
+    "splashImageUrl": "https://basequizzzz.vercel.app/splash.png",
+    "splashBackgroundColor": "#0052FF"
+  }
+}
