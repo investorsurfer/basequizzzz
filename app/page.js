@@ -5,7 +5,8 @@ import { base } from 'wagmi/chains';
 import { injected } from 'wagmi/connectors';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { parseEther } from 'viem';
-import { ShieldCheck, Zap, Share2 } from 'lucide-react';
+import { ShieldCheck, Zap } from 'lucide-react';
+import sdk from "@farcaster/frame-sdk";
 
 const queryClient = new QueryClient();
 const config = createConfig({
@@ -28,6 +29,14 @@ function QuizContent() {
   const { isConnected, address } = useAccount();
   const { connect, connectors } = useConnect();
   const { sendTransaction, isPending } = useSendTransaction();
+
+  // Farcaster SDK Ready Signal
+  useEffect(() => {
+    const load = async () => {
+      sdk.actions.ready();
+    };
+    load();
+  }, []);
 
   useEffect(() => {
     if (!isConnected && connectors[0]) connect({ connector: connectors[0] });
