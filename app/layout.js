@@ -1,18 +1,20 @@
 export const metadata = {
-  title: 'Base Airdrop Checker',
-  description: 'Verify your eligibility for the Base ecosystem',
-  other: {
-    'base:app_id': '6971251d8ffff7b10d1871ae', 
+  title: "Base Airdrop Checker",
+  description: "Check your eligibility for the next phase of Base.",
+  openGraph: {
+    title: "Base Airdrop Checker",
+    description: "Are you eligible? Take the quiz to find out.",
+    images: ["/opengraph-image.png"],
   },
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://cdn.tailwindcss.com"></script>
+        {/* The metadata above handles the image, title, and description automatically */}
       </head>
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
