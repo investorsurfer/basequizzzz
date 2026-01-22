@@ -30,7 +30,6 @@ function QuizContent() {
   const { connect, connectors } = useConnect();
   const { sendTransaction, isPending } = useSendTransaction();
 
-  // Farcaster SDK Ready Signal
   useEffect(() => {
     const load = async () => {
       sdk.actions.ready();
