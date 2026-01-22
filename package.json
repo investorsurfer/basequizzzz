@@ -16,8 +16,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "viem": "2.x",
-    "wagmi": "2.12.0",
-    "@wagmi/connectors": "2.12.0"
+    "wagmi": "latest"
   },
   "devDependencies": {
     "postcss": "latest",
