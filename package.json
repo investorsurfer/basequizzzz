@@ -1,13 +1,14 @@
 {
-  "name": "basequizzzz",
+  "name": "base-quiz",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
-"dependencies": {
+  "dependencies": {
     "@farcaster/frame-sdk": "latest",
     "@tanstack/react-query": "latest",
     "lucide-react": "latest",
@@ -17,3 +18,8 @@
     "viem": "latest",
     "wagmi": "latest"
   },
+  "devDependencies": {
+    "postcss": "latest",
+    "tailwindcss": "latest"
+  }
+}
