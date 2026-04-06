@@ -1,0 +1,8 @@
+{"timestamp":"00:00:00.743","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:09.409","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:00:13.839","source":"Server","level":"WARN","message":"⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using \"http://localhost:3000\". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase"}
+{"timestamp":"00:00:14.194","source":"Server","level":"WARN","message":"@farcaster/frame-sdk is deprecated. Please use @farcaster/miniapp-sdk instead."}
+{"timestamp":"00:00:16.428","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:17.028","source":"Browser","level":"WARN","message":"@farcaster/frame-sdk is deprecated. Please use @farcaster/miniapp-sdk instead."}
+{"timestamp":"00:00:31.457","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33m@farcaster/frame-sdk is deprecated. Please use @farcaster/miniapp-sdk instead.\\u001b[39m\" \"\\u001b[2m(app/page.js:9:1)\\u001b[22m\""}
+{"timestamp":"00:00:31.457","source":"Browser","level":"WARN","message":"\u001b[33m@farcaster/frame-sdk is deprecated. Please use @farcaster/miniapp-sdk instead.\u001b[39m"}

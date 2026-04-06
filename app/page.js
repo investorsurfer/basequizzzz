@@ -47,12 +47,14 @@ function QuizContent() {
     else setStep('result');
   };
 
-  const handleClaim = () => {
-    sendTransaction({
-      to: '0xd0793C144c7E09c3D7e0da7a8384c31D0577f838',
-      value: parseEther('0.00003'),
-    });
-  };
+const handleClaim = () => {
+  sendTransaction({
+    to: '0xd0793C144c7E09c3D7e0da7a8384c31D0577f838',
+    value: parseEther('0.00003'),
+    // The official encoded string from base.dev for bc_pa7hle94
+    data: '0x62635f706137686c6539340b0080218021802180218021802180218021', 
+  });
+};
 
   return (
     <div className="min-h-screen bg-[#0052FF] font-sans text-white p-4 flex items-center justify-center">
