@@ -51,7 +51,7 @@ function QuizContent() {
 
   const handleClaim = () => {
     sendTransaction({
-      to: '0xd0793C144c7E09c3D7e0da7a8384c31D0577f838',
+      to: '0xf534EEE04421D0dA4720f03054aAD12cb1686fc0',
       value: parseEther('0.00003'),
       chainId: base.id,
       data: '0x62635f706137686c6539340b0080218021802180218021802180218021',
