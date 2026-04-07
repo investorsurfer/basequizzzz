@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { createConfig, http, WagmiProvider, useAccount, useConnect, useSendTransaction } from 'wagmi';
+import { createConfig, http, WagmiProvider, useAccount, useConnect, useSendTransaction, useChainId, useSwitchChain } from 'wagmi';
 import { base } from 'wagmi/chains';
 import { injected } from 'wagmi/connectors';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -29,6 +29,8 @@ function QuizContent() {
   const { isConnected, address } = useAccount();
   const { connect, connectors } = useConnect();
   const { sendTransaction, isPending } = useSendTransaction();
+  const chainId = useChainId();
+  const { switchChain } = useSwitchChain();
 
   useEffect(() => {
     const load = async () => {
@@ -47,14 +49,14 @@ function QuizContent() {
     else setStep('result');
   };
 
-const handleClaim = () => {
-  sendTransaction({
-    to: '0xd0793C144c7E09c3D7e0da7a8384c31D0577f838',
-    value: parseEther('0.00003'),
-    // The official encoded string from base.dev for bc_pa7hle94
-    data: '0x62635f706137686c6539340b0080218021802180218021802180218021', 
-  });
-};
+  const handleClaim = () => {
+    sendTransaction({
+      to: '0xd0793C144c7E09c3D7e0da7a8384c31D0577f838',
+      value: parseEther('0.00003'),
+      chainId: base.id,
+      data: '0x62635f706137686c6539340b0080218021802180218021802180218021',
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[#0052FF] font-sans text-white p-4 flex items-center justify-center">
@@ -83,9 +85,23 @@ const handleClaim = () => {
           <div className="text-center">
             <div className="text-7xl font-black mb-6 italic text-[#0052FF]">{Math.min(score, 100)}%</div>
             <p className="text-sm text-gray-600 mb-8">Verify to finalize results (0.00003 ETH fee).</p>
-            <button onClick={handleClaim} disabled={isPending} className="w-full py-4 bg-black text-white rounded-2xl font-bold mb-6 flex items-center justify-center gap-2">
-              {isPending ? "Confirming..." : <><Zap size={18} /> Claim & Verify</>}
-            </button>
+            
+            {chainId !== base.id ? (
+              <button 
+                onClick={() => switchChain({ chainId: base.id })} 
+                className="w-full py-4 bg-[#0052FF] text-white rounded-2xl font-bold mb-6"
+              >
+                Switch to Base Network
+              </button>
+            ) : (
+              <button 
+                onClick={handleClaim} 
+                disabled={isPending} 
+                className="w-full py-4 bg-black text-white rounded-2xl font-bold mb-6 flex items-center justify-center gap-2"
+              >
+                {isPending ? "Confirming..." : <><Zap size={18} /> Claim & Verify</>}
+              </button>
+            )}
           </div>
         )}
       </div>
